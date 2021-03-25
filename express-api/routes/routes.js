@@ -47,16 +47,17 @@ app.get('/handles/:handle', (request, response) => {
         response.send(result);
     } );
 }
-)
+);
 
 //Add a new developer
 
 app.post('/handles', (request, response) => {
-    pool.query('INSERT INTO HANDLE SET ?', request.body, (error, result) =>{
+    pool.query('INSERT INTO Handle SET ?', request.body, (error, result) =>{
         if(error) throw error;
+
         response.status(201).send(`Developer added`);
-    })
-})
+    });
+});
 
 
 
